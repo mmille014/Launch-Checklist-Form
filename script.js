@@ -11,7 +11,7 @@ window.addEventListener("load", function () {
    let copilotStatus = document.getElementById("copilotStatus");
    let fuelStatus = document.getElementById("fuelStatus");
    let cargoStatus = document.getElementById("cargoStatus");
-   let planetDataDisplay = document.getElementById("planetData");
+   let planetDataDisplay = document.getElementById("planetDataDisplay");
       
    form.addEventListener("submit", (event) => {
       event.preventDefault();
@@ -53,14 +53,14 @@ window.addEventListener("load", function () {
             let planet = data[Math.floor(Math.random() * data.length)];
 
             planetDataDisplay.innerHTML = 
-            <h2>Mission Destination</h2>
+            `<h2>Mission Destination</h2>
             <ol>
-               <li>Name ${planetDataDisplay.name}</li>
-               <li>Diameter: ${planetDataDisplay.diameter}</li>
-               <li>Star: ${planetDataDisplay.star}</li>
+               <li>Name ${planet.name}</li>
+               <li>Diameter: ${planet.diameter}</li>
+               <li>Star: ${planet.star}</li>
                <li>Distance from Earth: ${planet.distance}</li>
                <li>Number of Moons: ${planet.moons}</li>
             </ol>
-            <img>src="${planet.image}"</img>
+            <img src="${planet.image}">`
    });
 });
